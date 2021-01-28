@@ -1,7 +1,7 @@
 # AIOAndroidDebloater
 
 <h1>
-  <img width=100% src="lib/images/Android11-logo.png">
+  <img width=50% src="lib/images/Android11-logo.png">
 </h1>
 
 This Linux Script used via ADB commands will debloat an Android Phone
