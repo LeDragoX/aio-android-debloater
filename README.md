@@ -6,6 +6,8 @@
 
 This Linux Script used via ADB commands will debloat an Android Phone
 
+## How to Use
+
 ```s
 # Dependencies
 sudo apt install -fy adb
