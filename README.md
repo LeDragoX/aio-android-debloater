@@ -1,5 +1,5 @@
 <div align="center">
-  <# AIOAndroidDebloater #>
+  <h1> AIOAndroidDebloater </h1>
   <h1>
     <img width=50% src="lib/images/Android11-logo.png">
   </h1>
