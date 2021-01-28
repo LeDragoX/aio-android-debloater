@@ -107,6 +107,8 @@ declare -a Apps=(
 
 # Iterate the string array using for loop
 for Bloat in ${Apps[@]}; do
-    echo "Removing: $Bloat"
+    printf "\nRemoving: $Bloat"
     adb shell pm uninstall --user 0 $Bloat
 done
+
+adb reboot
