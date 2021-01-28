@@ -7,6 +7,12 @@
 
 This Linux Script used via ADB commands will debloat an Android Phone
 
+## Download Latest Version
+
+The code is always on the `main` branch, this is the *Bleeding-Edge* but always functional version.
+
+- [Download [Zip]](https://github.com/LeDragoX/AIOAndroidDebloater/archive/main.zip)
+
 ## How to Use
 
 ```s
