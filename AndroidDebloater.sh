@@ -160,4 +160,9 @@ function XiaomiDebloat {
 
 }
 
-adb reboot
+CommonDebloat
+AsusDebloat
+SamsungDebloat
+XiaomiDebloat
+
+adb reboot          # Reboot your Smartphone
