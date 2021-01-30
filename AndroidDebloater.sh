@@ -31,7 +31,7 @@ function CommonDebloat {
         "com.google.android.videos"                     # Google Play Movies
         "com.google.android.apps.magazines"             # Google Play Magazines
         "com.google.android.apps.walletnfcrel"          # Wallet
-        #"com.google.ar.lens"                            # Google Lens
+        #"com.google.ar.lens"                           # Google Lens
 
         # Other
 
