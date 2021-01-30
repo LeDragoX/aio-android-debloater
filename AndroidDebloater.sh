@@ -24,7 +24,7 @@ function CommonDebloat {
         "com.google.android.apps.books"                 # Google Play Books
         "com.google.android.apps.tachyon"               # Google Duo
         "com.google.android.feedback"                   # Market Feedback Agent
-        #"com.google.android.googlequicksearchbox"       # Google App
+        #"com.google.android.googlequicksearchbox"      # Google App
         "com.google.android.talk"                       # Google Hangouts
         "com.google.android.marvin.talkback"            # Google Talkback
         "com.google.android.music"                      # Google Play Music
