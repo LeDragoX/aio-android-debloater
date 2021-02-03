@@ -22,6 +22,7 @@ function CommonDebloat {
         "android.googleSearch.googleSearchWidget"       # Google Search
         "com.android.bookmarkprovider"                  # Bookmark Provider
         "com.google.android.apps.books"                 # Google Play Books
+        "com.google.android.apps.podcasts"              # Google Podcasts
         "com.google.android.apps.tachyon"               # Google Duo
         "com.google.android.feedback"                   # Market Feedback Agent
         #"com.google.android.googlequicksearchbox"      # Google App
