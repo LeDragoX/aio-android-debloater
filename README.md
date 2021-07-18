@@ -5,7 +5,9 @@
   </h1>
 </div>
 
-This Linux Script used via ADB commands will debloat an Android Phone
+## Resume
+
+This Script can be used via terminal to uninstall bloat Android apps.
 
 ## Download Latest Version
 
@@ -13,9 +15,9 @@ The code is always on the `main` branch, this is the *Bleeding-Edge* but always 
 
 - [Download [Zip]](https://github.com/LeDragoX/AIOAndroidDebloater/archive/main.zip)
 
-## How to Use
+## Usage
 
-```s
+```sh
 # Dependencies
 sudo apt install -fy adb
 
