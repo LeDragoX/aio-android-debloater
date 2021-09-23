@@ -1,7 +1,7 @@
 <div align="center">
   <h1> AIO Android Debloater </h1>
   <h1>
-    <img width=25% src="lib/images/android11-logo.png">
+    <img width=25% src="assets/images/android11-logo.png">
   </h1>
 </div>
 
@@ -9,9 +9,13 @@
 
 This Script can be used via terminal to uninstall bloat Android apps.
 
+⚠️ **Disclaimer:** You're doing this at your own risk, I am not responsible for any data loss or damage that may occur.
+
+> Btw, this script is kinda outdated, don't expect too much.
+
 ## Download Latest Version
 
-The code is always on the `main` branch, this is the *Bleeding-Edge* but always functional version.
+The code is always on the `main` branch, this is the _Bleeding-Edge_ but always functional version.
 
 - [Download [Zip]](https://github.com/LeDragoX/AIOAndroidDebloater/archive/main.zip)
 
@@ -21,7 +25,10 @@ The code is always on the `main` branch, this is the *Bleeding-Edge* but always 
 # Dependencies
 sudo apt install -fy adb
 
-git clone https://github.com/LeDragoX/AIOAndroidDebloater.git ~/Downloads/AIOAndroidDebloater
-cd ~/Downloads/AIOAndroidDebloater
-chmod +x *.sh && yes | ./AndroidDebloater.sh
+mkdir --parents ~/Downloads
+git clone https://github.com/LeDragoX/LinuxScript.git ~/Downloads/LinuxScript
+cd ~/Downloads/LinuxScript/
+chmod --recursive +x *.sh     # Current folder files
+chmod --recursive +x **/*.sh  # All folders inside files
+./src/AndroidDebloater.sh
 ```
