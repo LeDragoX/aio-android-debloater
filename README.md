@@ -13,21 +13,15 @@ This Script can be used via terminal to uninstall bloat Android apps.
 
 > Btw, this script is kinda outdated, don't expect too much.
 
-## Download Latest Version
-
-The code is always on the `main` branch, this is the _Bleeding-Edge_ but always functional version.
-
-- [Download [Zip]](https://github.com/LeDragoX/AIOAndroidDebloater/archive/main.zip)
-
 ## Usage
 
 ```sh
 # Dependencies
-sudo apt install -fy adb
+sudo apt install -fy git adb
 
 mkdir --parents ~/Downloads
-git clone https://github.com/LeDragoX/LinuxScript.git ~/Downloads/LinuxScript
-cd ~/Downloads/LinuxScript/
+git clone https://github.com/LeDragoX/AIOAndroidDebloater.git ~/Downloads/AIOAndroidDebloater
+cd ~/Downloads/AIOAndroidDebloater/
 chmod --recursive +x *.sh     # Current folder files
 chmod --recursive +x **/*.sh  # All folders inside files
 ./src/AndroidDebloater.sh
