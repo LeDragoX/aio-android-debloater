@@ -28,5 +28,5 @@ git clone https://github.com/LeDragoX/aio-android-debloater.git ~/Downloads/aio-
 cd ~/Downloads/aio-android-debloater/
 chmod --recursive +x *.sh     # Current folder files
 chmod --recursive +x **/*.sh  # All folders inside files
-./src/android-debloater.sh
+bash ./src/android-debloater.sh
 ```

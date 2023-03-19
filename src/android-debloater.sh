@@ -1,163 +1,169 @@
 #!/bin/bash
 
-# Before everything, just to be sure thanks to https://gitlab.com/W1nst0n
-
 function CommonDebloat {
 
-    printf "\nShowing all Apps from Google..."
-    adb shell pm list packages | grep google
+  printf "\nShowing all Apps from Google...\n"
+  adb shell pm list packages | grep google
 
-    # https://linuxhint.com/bash_loop_list_strings/
-    # Declare an array of string with type
+  # https://linuxhint.com/bash_loop_list_strings/
+  # Declare an array of string with type
 
-    declare -a CommonApps=(
-        # Social bloat
+  declare -a CommonApps=(
+    # Social bloat
 
-        #"com.facebook.katana"              # Facebook
-        #"com.instagram.android"            # Instagram
-        #"com.google.android.youtube"       # Youtube
+    #"com.facebook.katana"              # Facebook
+    #"com.instagram.android"            # Instagram
+    #"com.google.android.youtube"       # Youtube
 
-        # Google (common)
+    # Google (common)
 
-        "android.googleSearch.googleSearchWidget"       # Google Search
-        "com.android.bookmarkprovider"                  # Bookmark Provider
-        "com.google.android.apps.books"                 # Google Play Books
-        "com.google.android.apps.podcasts"              # Google Podcasts
-        "com.google.android.apps.tachyon"               # Google Duo
-        "com.google.android.feedback"                   # Market Feedback Agent
-        #"com.google.android.googlequicksearchbox"      # Google App
-        "com.google.android.talk"                       # Google Hangouts
-        "com.google.android.marvin.talkback"            # Google Talkback
-        "com.google.android.music"                      # Google Play Music
-        "com.google.android.videos"                     # Google Play Movies
-        "com.google.android.apps.magazines"             # Google Play Magazines
-        "com.google.android.apps.walletnfcrel"          # Wallet
-        #"com.google.ar.lens"                           # Google Lens
+    "android.googleSearch.googleSearchWidget" # Google Search
+    "com.android.bookmarkprovider"            # Bookmark Provider
+    "com.google.android.apps.books"           # Google Play Books
+    "com.google.android.apps.podcasts"        # Google Podcasts
+    "com.google.android.apps.tachyon"         # Google Duo
+    "com.google.android.feedback"             # Market Feedback Agent
+    #"com.google.android.googlequicksearchbox"      # Google App
+    "com.google.android.talk"              # Google Hangouts
+    "com.google.android.marvin.talkback"   # Google Talkback
+    "com.google.android.music"             # Google Play Music
+    "com.google.android.videos"            # Google Play Movies
+    "com.google.android.apps.magazines"    # Google Play Magazines
+    "com.google.android.apps.walletnfcrel" # Wallet
+    #"com.google.ar.lens"                           # Google Lens
 
-        # Other
+    # Other
 
-        "com.android.email"                                         # Email
-        "com.android.noisefield"                                    # Bubbles
-        "com.arcsoft.picturesbest.app"                              # Best Face
-        "com.sec.android.daemonapp.ap.yahoonews"                    # News Daemon(EUR)
-        "com.sec.android.widgetapp.ap.yahoonews"                    # Yahoo! News
-        "com.sec.android.widgetapp.ap.yahoostock.stockclock"        # Yahoo! Finance
-        "flipboard.app"                                             # Flipboard
-    )
+    "com.android.email"                                  # Email
+    "com.android.noisefield"                             # Bubbles
+    "com.arcsoft.picturesbest.app"                       # Best Face
+    "com.sec.android.daemonapp.ap.yahoonews"             # News Daemon(EUR)
+    "com.sec.android.widgetapp.ap.yahoonews"             # Yahoo! News
+    "com.sec.android.widgetapp.ap.yahoostock.stockclock" # Yahoo! Finance
+    "flipboard.app"                                      # Flipboard
+  )
 
-    printf "\nDebloating Common Apps...\n"
-    # Iterate the string array using for loop
-    for Bloat in ${CommonApps[@]}; do
-        printf "\nTrying to remove: $Bloat"
-        adb shell pm uninstall --user 0 $Bloat
-    done
+  printf "\nDebloating Common Apps...\n\n"
+  # Iterate the string array using for loop
+  for Bloat in ${CommonApps[@]}; do
+    printf "Trying to remove: $Bloat"
+    adb shell pm uninstall --user 0 $Bloat
+  done
 
 }
 
 function AsusDebloat {
 
-    printf "\nShowing all Apps from Asus..."
-    adb shell pm list packages | grep asus
+  printf "\nShowing all Apps from Asus...\n"
+  adb shell pm list packages | grep asus
 
-    declare -a AsusApps=(
-        # Asus
+  declare -a AsusApps=(
+    # Asus
 
-        "com.asus.brapp"                # ASUS BR Apps
-        "com.asus.collage"              # ASUS Photo Collage
-        "com.asus.easylauncher"         # ASUS Easy Launcher
-        "com.asus.ephotoburst"          # 
-        "com.asus.gamewidget"           # ASUS Game Genie
-        "com.asus.ia.asusapp"           # MyASUS - ASUS Support
-        "com.asus.kidslauncher"         # ASUS Kids Launcher
-        "com.asus.livedemo"             # ASUS Demo
-        "com.asus.microfilm"            # ASUS Micro Film
-        "com.asus.mobilemanager"        # Mobile Manager
-        "com.asus.quickmemo"            # ASUS Quick Memo
-        "com.asus.selfiemaster"         # ASUS Selfie Master
-        "com.asus.server.azs"           # ASUS ZenUI Services
-        "com.asus.task"                 # Do It Later
-        "com.asus.themeapp"             # ASUS Themes
-        "com.asus.userfeedback"         # FAQ / ZenUI Help
-        "com.asus.weathertime"          # ASUS Weather
-        "com.asus.wellness"             # Zen Fitness
-        "com.asus.zentalk"              # Zen Talk
-    )
+    "com.asus.brapp"         # ASUS BR Apps
+    "com.asus.collage"       # ASUS Photo Collage
+    "com.asus.easylauncher"  # ASUS Easy Launcher
+    "com.asus.ephotoburst"   #
+    "com.asus.gamewidget"    # ASUS Game Genie
+    "com.asus.ia.asusapp"    # MyASUS - ASUS Support
+    "com.asus.kidslauncher"  # ASUS Kids Launcher
+    "com.asus.livedemo"      # ASUS Demo
+    "com.asus.microfilm"     # ASUS Micro Film
+    "com.asus.mobilemanager" # Mobile Manager
+    "com.asus.quickmemo"     # ASUS Quick Memo
+    "com.asus.selfiemaster"  # ASUS Selfie Master
+    "com.asus.server.azs"    # ASUS ZenUI Services
+    "com.asus.task"          # Do It Later
+    "com.asus.themeapp"      # ASUS Themes
+    "com.asus.userfeedback"  # FAQ / ZenUI Help
+    "com.asus.weathertime"   # ASUS Weather
+    "com.asus.wellness"      # Zen Fitness
+    "com.asus.zentalk"       # Zen Talk
+  )
 
-    printf "\nDebloating Asus Apps...\n"
-    for Bloat in ${AsusApps[@]}; do
-        printf "\nTrying to remove: $Bloat"
-        adb shell pm uninstall --user 0 $Bloat
-    done
+  printf "\nDebloating Asus Apps...\n\n"
+  for Bloat in ${AsusApps[@]}; do
+    printf "Trying to remove: $Bloat"
+    adb shell pm uninstall --user 0 $Bloat
+  done
 
 }
 
 function SamsungDebloat {
 
-    printf "\nShowing all Apps from Samsung..."
-    adb shell pm list packages | grep samsung
+  printf "\nShowing all Apps from Samsung...\n"
+  adb shell pm list packages | grep samsung
 
-    declare -a SamsungApps=(
-        # Samsung
+  declare -a SamsungApps=(
+    # Samsung
 
-        "com.samsung.android.livewallpaper.deepsea"     # Deep sea
-        "com.samsung.helphub"                           # Help
-        "com.samsung.swift.app.kiesair"                 # Kies Air
-        "com.sec.android.app.kieswifi"                  # Kies via Wi-Fi
-        "com.sec.android.app.samsungapps"               # Samsung Apps
-        "com.sec.spp.push"                              # Samsung Push Service
-    )
+    "com.samsung.android.livewallpaper.deepsea" # Deep sea
+    "com.samsung.helphub"                       # Help
+    "com.samsung.swift.app.kiesair"             # Kies Air
+    "com.sec.android.app.kieswifi"              # Kies via Wi-Fi
+    "com.sec.android.app.samsungapps"           # Samsung Apps
+    "com.sec.spp.push"                          # Samsung Push Service
+  )
 
-    printf "\nDebloating Samsung Apps...\n"
-    for Bloat in ${SamsungApps[@]}; do
-        printf "\nTrying to remove: $Bloat"
-        adb shell pm uninstall --user 0 $Bloat
-    done
+  printf "\nDebloating Samsung Apps...\n\n"
+  for Bloat in ${SamsungApps[@]}; do
+    printf "Trying to remove: $Bloat"
+    adb shell pm uninstall --user 0 $Bloat
+  done
 
 }
 
 function XiaomiDebloat {
 
-    printf "\nShowing all Apps from Xiaomi..."
-    adb shell pm list packages | grep miui
-    adb shell pm list packages | grep xiaomi
+  printf "\nShowing all Apps from Xiaomi...\n"
+  adb shell pm list packages | grep miui
+  adb shell pm list packages | grep xiaomi
 
-    declare -a XiaomiApps=(
-        # Xiaomi
+  declare -a XiaomiApps=(
+    # Xiaomi
 
-        "cn.wps.xiaomi.abroad.lite"                     # Mi Doc viewer
-        "com.android.browser"                           # Mi Browser
-        "com.android.midrive"                           # Mi Drive
-        "com.android.providers.PartnerBookmarks"        # PartnerBookmarks
-        "com.autonavi.minimap"                          # Xiaomi GPS
-        "com.baidu.duersdk.opensdk"                     # Duer stuff from Baidu
-        "com.baidu.input_mi"                            # Baidu IME (Baidu keyboard)
-        "com.baidu.searchbox"                           # Baidu App search engine
-        "com.bsp.catchlog"
-        "com.mi.global.shop"                            # Mi App Store
-        "com.micredit.in.gp"                            # Mi Credit
-        "com.mipay.in.wallet"                           # Mi Pay
-        "com.miui.daemonapp"                            # MIUI Daemon
-        "com.miui.hybrid"                               # QuickApps
-        "com.miui.touchassistant"                       # QuickBall
-        "com.miui.videoplayer"                          # Mi Video
-        "com.miui.vsimcore"                             # VsimCore
-        "com.miui.yellowpage"                           # Yellow Pages
-        "com.netflix.partner.activation"                # PartnerNetflixActivation
-        "com.qiyi.video"                                # IQIYI
-        "com.xiaomi.joyose"                             # Joyose
-        "com.xiaomi.midrop"                             # Mi Drop
-        "com.xiaomi.mirecycle"                          # Mi Recycle
-        "com.xiaomi.payment"                            # Xiaomi Payment
-        # MiWebView
-        # Translation Service
+    "com.android.browser"                    # Mi Browser
+    "com.android.midrive"                    # Mi Drive
+    "com.android.providers.PartnerBookmarks" # PartnerBookmarks
+    "com.autonavi.minimap"                   # Xiaomi GPS
+    "com.baidu.duersdk.opensdk"              # Duer stuff from Baidu
+    "com.baidu.input_mi"                     # Baidu IME (Baidu keyboard)
+    "com.baidu.searchbox"                    # Baidu App search engine
+    "com.bsp.catchlog"
+    "com.mi.global.shop"               # Mi App Store
+    "com.mi.android.globalminusscreen" # App Vault / Left launcher screen
+    "com.micredit.in.gp"               # Mi Credit
+    "com.mipay.in.wallet"              # Mi Pay
+    "com.miui.daemonapp"               # MIUI Daemon
+    "com.miui.hybrid"                  # QuickApps
+    "com.miui.touchassistant"          # QuickBall
+    "com.miui.videoplayer"             # Mi Video
+    "com.miui.vsimcore"                # VsimCore
+    "com.miui.yellowpage"              # Yellow Pages
+    "com.netflix.partner.activation"   # PartnerNetflixActivation
+    "com.qiyi.video"                   # IQIYI
+    "com.xiaomi.glgm"                  # Game Center
+    "com.xiaomi.joyose"                # Joyose
+    "com.xiaomi.midrop"                # Mi Drop
+    "com.xiaomi.mipicks"               # Xiaomi "Play Store"
+    "com.xiaomi.mirecycle"             # Mi Recycle
+    "com.xiaomi.payment"               # Xiaomi Payment
+    "cn.wps.xiaomi.abroad.lite"        # Mi Doc viewer
+    # MiWebView
+    # Translation Service
+    # Games
+    "com.block.puzzle.game.hippo.mi"                      # Block Puzzle Guardian
+    "com.crazy.juicer.xm"                                 # Crazy Juicer
+    "com.logame.eliminateintruder3d"                      # Dust Settle
+    "com.sukhavati.gotoplaying.bubble.BubbleShooter.mint" # Bubble Shooter And Friends
+    "com.bubble.free.bubblestory"                         # Bubble Story
+  )
 
-    )
-
-    printf "\nDebloating Xiaomi Apps...\n"
-    for Bloat in ${XiaomiApps[@]}; do
-        printf "\nTrying to remove: $Bloat"
-        adb shell pm uninstall --user 0 $Bloat
-    done
+  printf "\nDebloating Xiaomi Apps...\n\n"
+  for Bloat in ${XiaomiApps[@]}; do
+    printf "Trying to remove: $Bloat"
+    adb shell pm uninstall --user 0 $Bloat
+  done
 
 }
 
@@ -166,4 +172,4 @@ AsusDebloat
 SamsungDebloat
 XiaomiDebloat
 
-adb reboot          # Reboot your Smartphone
+printf "\nYou need to reboot your phone and see if it's not bootlooping"
