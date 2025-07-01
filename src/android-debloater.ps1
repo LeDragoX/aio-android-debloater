@@ -6,25 +6,22 @@ function Remove-Bloat() {
         # "com.google.android.youtube" # Youtube
 
         # Google (common)
-        "android.googleSearch.googleSearchWidget" # Google Search
-        "com.google.android.apps.books"           # Google Play Books
-        "com.google.android.apps.podcasts"        # Google Podcasts
-        "com.google.android.apps.tachyon"         # Google Duo
-        "com.google.android.feedback"             # Market Feedback Agent
-        # "com.google.android.googlequicksearchbox" # Google App
-        "com.google.android.talk"              # Google Hangouts
-        "com.google.android.marvin.talkback"   # Google Talkback
-        "com.google.android.music"             # Google Play Music
-        "com.google.android.videos"            # Google Play Movies
+        # "android.googleSearch.googleSearchWidget" # Google Search
+        "com.google.android.apps.books"        # Google Play Books
         "com.google.android.apps.magazines"    # Google Play Magazines
+        "com.google.android.apps.podcasts"     # Google Podcasts
+        "com.google.android.apps.tachyon"      # Google Duo
         "com.google.android.apps.walletnfcrel" # Wallet
-        # "com.google.ar.lens"                 # Google Lens
+        "com.google.android.feedback"          # Market Feedback Agent
+        # "com.google.android.googlequicksearchbox" # Google App
+        "com.google.android.marvin.talkback" # Google Talkback
+        "com.google.android.talk"            # Google Hangouts
 
         # Other
         "com.android.email"                                  # Email
         "com.android.noisefield"                             # Bubbles
         "com.arcsoft.picturesbest.app"                       # Best Face
-        "com.sec.android.daemonapp.ap.yahoonews"             # News Daemon(EUR)
+        "com.sec.android.daemonapp.ap.yahoonews"             # News Daemon (EUR)
         "com.sec.android.widgetapp.ap.yahoonews"             # Yahoo! News
         "com.sec.android.widgetapp.ap.yahoostock.stockclock" # Yahoo! Finance
         "flipboard.app"                                      # Flipboard
@@ -55,7 +52,7 @@ function Remove-Bloat() {
 
     $SamsungApps = @(
         # Samsung
-        "com.samsung.android.livewallpaper.deepsea" # Deep sea
+        "com.samsung.android.livewallpaper.deepsea" # Deep Sea
         "com.samsung.helphub"                       # Help
         "com.samsung.swift.app.kiesair"             # Kies Air
         "com.sec.android.app.kieswifi"              # Kies via Wi-Fi
@@ -74,9 +71,9 @@ function Remove-Bloat() {
         "com.baidu.input_mi"                     # Baidu IME (Baidu keyboard)
         "com.baidu.searchbox"                    # Baidu App search engine
         "com.bsp.catchlog"
-        "com.facebook.appmanager"           # Facebook App Manager
-        "com.facebook.services"             # Facebook Services
-        "com.facebook.system"               # Facebook App Installer
+        "com.facebook.appmanager"          # Facebook App Manager
+        "com.facebook.services"            # Facebook Services
+        "com.facebook.system"              # Facebook App Installer
         "com.kwai.video"                   # Kwai
         "com.mi.globalbrowser"             # Mi Browser (2)
         "com.mi.global.shop"               # Mi App Store
@@ -95,6 +92,7 @@ function Remove-Bloat() {
         "com.miui.hybrid.accessory"        # QuickApps Hybrid Accessory
         "com.miui.miservice"               # Services & Feedback
         "com.miui.msa.global"              # Xiaomi Ads System
+        "com.miui.player"                  # Mi Music
         "com.miui.notes"                   # Mi Notes
         "com.miui.touchassistant"          # QuickBall
         "com.miui.videoplayer"             # Mi Video

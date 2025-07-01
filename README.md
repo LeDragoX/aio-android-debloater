@@ -17,6 +17,16 @@ Using the scripts will require ADB (Android Debug Bridge) installed on your OS a
 
 For **Windows**: <https://developer.android.com/tools/releases/platform-tools>
 
+- Put **ALL** the files inside `src` folder, so the script can use the `adb` command.
+
+- Or install ADB **globally** with [Chocolatey](https://chocolatey.org/install#individual):
+
+```ps1
+choco install adb
+```
+
+For **Linux**:
+
 ```sh
 sudo apt install -fy git adb
 ```
@@ -28,7 +38,7 @@ sudo apt install -fy git adb
 open the Terminal/powershell on the `src` folder and run the following command:
 
 ```ps1
-.\src\android-debloater.ps1
+.\android-debloater.ps1
 ```
 
 ### Linux
