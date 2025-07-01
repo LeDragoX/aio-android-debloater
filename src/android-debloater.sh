@@ -81,6 +81,7 @@ function RemoveBloat {
     "com.facebook.system"              # Facebook App Installer
     "com.kwai.video"                   # Kwai
     "com.mi.globalbrowser"             # Mi Browser (2)
+    "com.mi.global.bbs"                # Xiaomi Community (New)
     "com.mi.global.shop"               # Mi App Store
     "com.mi.android.globalminusscreen" # App Vault / Left launcher screen
     "com.micredit.in.gp"               # Mi Credit
@@ -92,6 +93,7 @@ function RemoveBloat {
     "com.miui.cleaner"                 # Cleaner
     "com.miui.daemonapp"               # MIUI Daemon (Old)
     "com.miui.daemon"                  # MIUI Daemon (New)
+    "com.miui.enbbs"                   # MIUI Forum (Old)
     "com.miui.gallery"                 # Mi Gallery
     "com.miui.hybrid"                  # QuickApps
     "com.miui.hybrid.accessory"        # QuickApps Hybrid Accessory
@@ -118,10 +120,11 @@ function RemoveBloat {
     # Games
     "com.block.juggle"                                    # Block Blast!
     "com.block.puzzle.game.hippo.mi"                      # Block Puzzle Guardian
+    "com.bubble.free.bubblestory"                         # Bubble Story
     "com.crazy.juicer.xm"                                 # Crazy Juicer
     "com.logame.eliminateintruder3d"                      # Dust Settle
+    "com.mintgames.triplecrush.tile.fun"                  # Tile Fun
     "com.sukhavati.gotoplaying.bubble.BubbleShooter.mint" # Bubble Shooter And Friends
-    "com.bubble.free.bubblestory"                         # Bubble Story
   )
 
   printf "\nDebloating Common Apps..."
