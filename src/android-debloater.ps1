@@ -1,0 +1,150 @@
+function Remove-Bloat() {
+    $CommonApps = @(
+        # Social Bloat
+        # "com.facebook.katana"        # Facebook
+        # "com.instagram.android"      # Instagram
+        # "com.google.android.youtube" # Youtube
+
+        # Google (common)
+        "android.googleSearch.googleSearchWidget" # Google Search
+        "com.google.android.apps.books"           # Google Play Books
+        "com.google.android.apps.podcasts"        # Google Podcasts
+        "com.google.android.apps.tachyon"         # Google Duo
+        "com.google.android.feedback"             # Market Feedback Agent
+        # "com.google.android.googlequicksearchbox" # Google App
+        "com.google.android.talk"              # Google Hangouts
+        "com.google.android.marvin.talkback"   # Google Talkback
+        "com.google.android.music"             # Google Play Music
+        "com.google.android.videos"            # Google Play Movies
+        "com.google.android.apps.magazines"    # Google Play Magazines
+        "com.google.android.apps.walletnfcrel" # Wallet
+        # "com.google.ar.lens"                 # Google Lens
+
+        # Other
+        "com.android.email"                                  # Email
+        "com.android.noisefield"                             # Bubbles
+        "com.arcsoft.picturesbest.app"                       # Best Face
+        "com.sec.android.daemonapp.ap.yahoonews"             # News Daemon(EUR)
+        "com.sec.android.widgetapp.ap.yahoonews"             # Yahoo! News
+        "com.sec.android.widgetapp.ap.yahoostock.stockclock" # Yahoo! Finance
+        "flipboard.app"                                      # Flipboard
+    )
+
+    $AsusApps = @(
+        # Asus
+        "com.asus.brapp"         # ASUS BR Apps
+        "com.asus.collage"       # ASUS Photo Collage
+        "com.asus.easylauncher"  # ASUS Easy Launcher
+        "com.asus.ephotoburst"
+        "com.asus.gamewidget"    # ASUS Game Genie
+        "com.asus.ia.asusapp"    # MyASUS - ASUS Support
+        "com.asus.kidslauncher"  # ASUS Kids Launcher
+        "com.asus.livedemo"      # ASUS Demo
+        "com.asus.microfilm"     # ASUS Micro Film
+        "com.asus.mobilemanager" # Mobile Manager
+        "com.asus.quickmemo"     # ASUS Quick Memo
+        "com.asus.selfiemaster"  # ASUS Selfie Master
+        "com.asus.server.azs"    # ASUS ZenUI Services
+        "com.asus.task"          # Do It Later
+        "com.asus.themeapp"      # ASUS Themes
+        "com.asus.userfeedback"  # FAQ / ZenUI Help
+        "com.asus.weathertime"   # ASUS Weather
+        "com.asus.wellness"      # Zen Fitness
+        "com.asus.zentalk"       # Zen Talk
+    )
+
+    $SamsungApps = @(
+        # Samsung
+        "com.samsung.android.livewallpaper.deepsea" # Deep sea
+        "com.samsung.helphub"                       # Help
+        "com.samsung.swift.app.kiesair"             # Kies Air
+        "com.sec.android.app.kieswifi"              # Kies via Wi-Fi
+        "com.sec.android.app.samsungapps"           # Samsung Apps
+        "com.sec.spp.push"                          # Samsung Push Service
+    )
+
+    $XiaomiApps = @(
+        # Xiaomi (Global)
+        "com.android.browser"                    # Mi Browser (1)
+        "com.android.midrive"                    # Mi Drive
+        "com.android.providers.PartnerBookmarks" # PartnerBookmarks
+        "com.android.thememanager"               # Themes
+        "com.autonavi.minimap"                   # Xiaomi GPS
+        "com.baidu.duersdk.opensdk"              # Duer stuff from Baidu
+        "com.baidu.input_mi"                     # Baidu IME (Baidu keyboard)
+        "com.baidu.searchbox"                    # Baidu App search engine
+        "com.bsp.catchlog"
+        "com.facebook.appmanager"           # Facebook App Manager
+        "com.facebook.services"             # Facebook Services
+        "com.facebook.system"               # Facebook App Installer
+        "com.kwai.video"                   # Kwai
+        "com.mi.globalbrowser"             # Mi Browser (2)
+        "com.mi.global.shop"               # Mi App Store
+        "com.mi.android.globalminusscreen" # App Vault / Left launcher screen
+        "com.micredit.in.gp"               # Mi Credit
+        "com.mipay.in.wallet"              # Mi Pay (Old)
+        "com.mipay.wallet.in"              # Mi Pay (New)
+        "com.miui.analytics"               # Analytics
+        "com.miui.android.fashiongallery"  # Wallpaper Carrousel
+        "com.miui.calculator"              # Mi Calculator
+        "com.miui.cleaner"                 # Cleaner
+        "com.miui.daemonapp"               # MIUI Daemon (Old)
+        "com.miui.daemon"                  # MIUI Daemon (New)
+        "com.miui.gallery"                 # Mi Gallery
+        "com.miui.hybrid"                  # QuickApps
+        "com.miui.hybrid.accessory"        # QuickApps Hybrid Accessory
+        "com.miui.miservice"               # Services & Feedback
+        "com.miui.msa.global"              # Xiaomi Ads System
+        "com.miui.notes"                   # Mi Notes
+        "com.miui.touchassistant"          # QuickBall
+        "com.miui.videoplayer"             # Mi Video
+        "com.miui.yellowpage"              # Yellow Pages
+        "com.netflix.partner.activation"   # PartnerNetflixActivation
+        "com.qiyi.video"                   # IQIYI
+        "com.xiaomi.calendar"              # Mi Calendar
+        "com.xiaomi.glgm"                  # Game Center
+        "com.xiaomi.joyose"                # Joyose
+        "com.xiaomi.midrop"                # Mi Drop
+        "com.xiaomi.mipicks"               # Xiaomi "Play Store"
+        "com.xiaomi.mirecycle"             # Mi Recycle
+        "com.xiaomi.payment"               # Xiaomi Payment
+        "com.xiaomi.scanner"               # Mi Scanner
+        "com.xiaomi.simactivate.service"   # Xiaomi SIM Activation Service
+        "cn.wps.xiaomi.abroad.lite"        # Mi Doc viewer
+
+        # Games
+        "com.block.juggle"                                    # Block Blast!
+        "com.block.puzzle.game.hippo.mi"                      # Block Puzzle Guardian
+        "com.crazy.juicer.xm"                                 # Crazy Juicer
+        "com.logame.eliminateintruder3d"                      # Dust Settle
+        "com.sukhavati.gotoplaying.bubble.BubbleShooter.mint" # Bubble Shooter And Friends
+        "com.bubble.free.bubblestory"                         # Bubble Story
+    )
+
+    Write-Host "`nDebloating Common Apps..." -ForegroundColor Green
+    ForEach ($Bloat in $CommonApps) {
+        Write-Host "Trying to remove: $Bloat " -NoNewline -ForegroundColor Green
+        adb shell pm uninstall --user 0 $Bloat
+    }
+
+    Write-Host "`nDebloating Asus Apps..." -ForegroundColor Green
+    ForEach ($Bloat in $AsusApps) {
+        Write-Host "Trying to remove: $Bloat " -NoNewline -ForegroundColor Green
+        adb shell pm uninstall --user 0 $Bloat
+    }
+
+    Write-Host "`nDebloating Samsung Apps..." -ForegroundColor Green
+    ForEach ($Bloat in $SamsungApps) {
+        Write-Host "Trying to remove: $Bloat " -NoNewline -ForegroundColor Green
+        adb shell pm uninstall --user 0 $Bloat
+    }
+
+    Write-Host "`nDebloating Xiaomi Apps..." -ForegroundColor Green
+    ForEach ($Bloat in $XiaomiApps) {
+        Write-Host "Trying to remove: $Bloat " -NoNewline -ForegroundColor Green
+        adb shell pm uninstall --user 0 $Bloat
+    }
+}
+
+Remove-Bloat
+Write-Host "`nYou need to reboot your phone and see if it's not bootlooping" -ForegroundColor Yellow
