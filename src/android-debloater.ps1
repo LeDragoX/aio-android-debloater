@@ -1,21 +1,36 @@
 function Remove-Bloat() {
-    $CommonApps = @(
-        # Social Bloat
-        # "com.facebook.katana"        # Facebook
-        # "com.instagram.android"      # Instagram
-        # "com.google.android.youtube" # Youtube
+    $ThirdPartyApps = @(
+        # 3rd-Party
+        "com.amazon.mp3"                           # Amazon Music
+        "com.booking"                              # Booking.com
+        "com.einnovation.temu"                     # Temu
+        # "com.facebook.katana"                    # Facebook
+        # "com.linkedin.android"                   # LinkedIn
+        "com.inmobi.weather"                       # Weather
+        "com.kwai.video"                           # Kwai
+        "com.pdfreader.free.viewer.documentreader" # PDF Reader
+        "com.shopee.br"                            # Shopee (Brazil Variant)
+        "com.zhiliaoapp.musically"                 # TikTok
+        "flipboard.app"                            # Flipboard
+    )
 
+    $CommonApps = @(
         # Google (common)
         # "android.googleSearch.googleSearchWidget" # Google Search
-        "com.google.android.apps.books"        # Google Play Books
-        "com.google.android.apps.magazines"    # Google Play Magazines
-        "com.google.android.apps.podcasts"     # Google Podcasts
-        "com.google.android.apps.tachyon"      # Google Duo
-        "com.google.android.apps.walletnfcrel" # Wallet
-        "com.google.android.feedback"          # Market Feedback Agent
+        "com.google.android.apps.books"             # Google Play Books
+        "com.google.android.apps.chromecast.app"    # Google Home
+        "com.google.android.apps.fitness"           # Google Fit
+        "com.google.android.apps.magazines"         # Google Play Magazines
+        "com.google.android.apps.podcasts"          # Google Podcasts
+        "com.google.android.apps.tachyon"           # Google Duo
+        "com.google.android.apps.walletnfcrel"      # Wallet
+        "com.google.android.apps.subscriptions.red" # Google One
+        "com.google.android.feedback"               # Market Feedback Agent
         # "com.google.android.googlequicksearchbox" # Google App
-        "com.google.android.marvin.talkback" # Google Talkback
-        "com.google.android.talk"            # Google Hangouts
+        "com.google.android.marvin.talkback"        # Google Talkback
+        "com.google.android.talk"                   # Google Hangouts
+        "com.google.android.videos"                 # Google TV
+        # "com.google.android.youtube"              # YouTube
 
         # Other
         "com.android.email"                                  # Email
@@ -24,12 +39,11 @@ function Remove-Bloat() {
         "com.sec.android.daemonapp.ap.yahoonews"             # News Daemon (EUR)
         "com.sec.android.widgetapp.ap.yahoonews"             # Yahoo! News
         "com.sec.android.widgetapp.ap.yahoostock.stockclock" # Yahoo! Finance
-        "flipboard.app"                                      # Flipboard
     )
 
     $AsusApps = @(
         # Asus
-        "com.asus.brapp"         # ASUS BR Apps
+        "com.asus.brapp"         # ASUS BR Apps (Brazil Variant?)
         "com.asus.collage"       # ASUS Photo Collage
         "com.asus.easylauncher"  # ASUS Easy Launcher
         "com.asus.ephotoburst"
@@ -48,6 +62,25 @@ function Remove-Bloat() {
         "com.asus.weathertime"   # ASUS Weather
         "com.asus.wellness"      # Zen Fitness
         "com.asus.zentalk"       # Zen Talk
+    )
+
+    $MotorolaApps = @(
+        # Motorola
+        "com.motorola.brapps"           # App Box (Brazil Variant?)
+        "com.motorola.ccc.notification" # Hello Shopping / Hello You
+        "com.motorola.dimo"             # Dimo
+        # "com.motorola.moto"           # Moto
+
+        # Games
+        "ball.sort.puzzle.color.sorting.bubble.games" # Ball Sort Puzzle
+        "com.block.juggle"                            # Block Blast!
+        "com.king.candycrushsaga"                     # Candy Crush Saga
+        "com.moonactive.coinmaster"                   # Coin Master
+        "com.oakever.tiletrip"                        # Tile Explorer
+        "com.soulcompany.bubbleshooter.relaxing"      # Bubble Shooter Relaxing
+        "com.tripledot.solitaire"                     # Solitaire
+        "com.vitastudio.mahjong"                      # Vita Mahjong
+        "games.spearmint.triplecrush"                 # Tiledom
     )
 
     $SamsungApps = @(
@@ -74,7 +107,6 @@ function Remove-Bloat() {
         "com.facebook.appmanager"          # Facebook App Manager
         "com.facebook.services"            # Facebook Services
         "com.facebook.system"              # Facebook App Installer
-        "com.kwai.video"                   # Kwai
         "com.mi.globalbrowser"             # Mi Browser (2)
         "com.mi.global.bbs"                # Xiaomi Community (New)
         "com.mi.global.shop"               # Mi App Store
@@ -122,6 +154,12 @@ function Remove-Bloat() {
         "com.sukhavati.gotoplaying.bubble.BubbleShooter.mint" # Bubble Shooter And Friends
     )
 
+    Write-Host "`nDebloating Third-Party Apps..." -ForegroundColor Green
+    ForEach ($Bloat in $ThirdPartyApps) {
+        Write-Host "Trying to remove: $Bloat " -NoNewline -ForegroundColor Green
+        adb shell pm uninstall --user 0 $Bloat
+    }
+
     Write-Host "`nDebloating Common Apps..." -ForegroundColor Green
     ForEach ($Bloat in $CommonApps) {
         Write-Host "Trying to remove: $Bloat " -NoNewline -ForegroundColor Green
@@ -130,6 +168,12 @@ function Remove-Bloat() {
 
     Write-Host "`nDebloating Asus Apps..." -ForegroundColor Green
     ForEach ($Bloat in $AsusApps) {
+        Write-Host "Trying to remove: $Bloat " -NoNewline -ForegroundColor Green
+        adb shell pm uninstall --user 0 $Bloat
+    }
+
+    Write-Host "`nDebloating Motorola Apps..." -ForegroundColor Green
+    ForEach ($Bloat in $MotorolaApps) {
         Write-Host "Trying to remove: $Bloat " -NoNewline -ForegroundColor Green
         adb shell pm uninstall --user 0 $Bloat
     }

@@ -28,7 +28,12 @@ choco install adb
 For **Linux**:
 
 ```sh
-sudo apt install -fy git adb
+sudo pacman -S android-tools # Arch
+sudo apt install -fy git adb # Debian / Ubuntu / Mint
+sudo yum install adb # Fedora
+sudo emerge -a dev-util/android-tools # Gentoo
+sudo zypper install adb # OpenSUSE
+sudo apk add adb # Alpine
 ```
 
 ## Usage
@@ -44,7 +49,6 @@ open the Terminal/powershell on the `src` folder and run the following command:
 ### Linux
 
 ```sh
-
 mkdir --parents ~/Downloads
 git clone https://github.com/LeDragoX/aio-android-debloater.git ~/Downloads/aio-android-debloater
 cd ~/Downloads/aio-android-debloater/
@@ -53,6 +57,19 @@ chmod --recursive +x **/*.sh  # All folders inside files
 bash ./src/android-debloater.sh
 ```
 
-# Credits
+## App Alternatives
 
-Some of the bloatware found was related to **[Universal Android Debloater](https://github.com/0x192/universal-android-debloater)**'s descriptions reporting shady business related to OEM apps, thank you very much UAD Team!
+If an native OEM app was removed, I suggest you some alternatives from Google:
+
+- **[Calculator](https://play.google.com/store/apps/details?id=com.google.android.calculator)**
+- **[Calendar](https://play.google.com/store/apps/details?id=com.google.android.calendar)**
+- **[Clock](https://play.google.com/store/apps/details?id=com.google.android.deskclock)**
+- **[Contacts](https://play.google.com/store/apps/details?id=com.google.android.contacts)**
+- **[Files](https://play.google.com/store/apps/details?id=com.google.android.apps.nbu.files)**
+- **[Gallery](https://play.google.com/store/apps/details?id=com.google.android.apps.photosgo)**
+- **[Messages (SMS)](https://play.google.com/store/apps/details?id=com.google.android.apps.messaging)**
+- **[Phone Dialer](https://play.google.com/store/apps/details?id=com.google.android.dialer)**
+
+## Credits
+
+Some of the bloatware found was related to **_[Universal Android Debloater](https://github.com/0x192/universal-android-debloater)_**'s descriptions reporting shady business related to OEM apps, thank you very much UAD Team!

@@ -4,23 +4,38 @@ function RemoveBloat {
   # https://linuxhint.com/bash_loop_list_strings/
   # Declare an array of string with type
 
-  declare -a CommonApps=(
-    # Social Bloat
-    # "com.facebook.katana"        # Facebook
-    # "com.instagram.android"      # Instagram
-    # "com.google.android.youtube" # Youtube
+  declare -a ThirdPartyApps=(
+    # 3rd-Party
+    "com.amazon.mp3"       # Amazon Music
+    "com.booking"          # Booking.com
+    "com.einnovation.temu" # Temu
+    # "com.facebook.katana"                    # Facebook
+    # "com.linkedin.android"                   # LinkedIn
+    "com.inmobi.weather"                       # Weather
+    "com.kwai.video"                           # Kwai
+    "com.pdfreader.free.viewer.documentreader" # PDF Reader
+    "com.shopee.br"                            # Shopee (Brazil Variant)
+    "com.zhiliaoapp.musically"                 # TikTok
+    "flipboard.app"                            # Flipboard
+  )
 
+  declare -a CommonApps=(
     # Google (common)
     # "android.googleSearch.googleSearchWidget" # Google Search
-    "com.google.android.apps.books"        # Google Play Books
-    "com.google.android.apps.magazines"    # Google Play Magazines
-    "com.google.android.apps.podcasts"     # Google Podcasts
-    "com.google.android.apps.tachyon"      # Google Duo
-    "com.google.android.apps.walletnfcrel" # Wallet
-    "com.google.android.feedback"          # Market Feedback Agent
+    "com.google.android.apps.books"             # Google Play Books
+    "com.google.android.apps.chromecast.app"    # Google Home
+    "com.google.android.apps.fitness"           # Google Fit
+    "com.google.android.apps.magazines"         # Google Play Magazines
+    "com.google.android.apps.podcasts"          # Google Podcasts
+    "com.google.android.apps.tachyon"           # Google Duo
+    "com.google.android.apps.walletnfcrel"      # Wallet
+    "com.google.android.apps.subscriptions.red" # Google One
+    "com.google.android.feedback"               # Market Feedback Agent
     # "com.google.android.googlequicksearchbox" # Google App
     "com.google.android.marvin.talkback" # Google Talkback
     "com.google.android.talk"            # Google Hangouts
+    "com.google.android.videos"          # Google TV
+    # "com.google.android.youtube"              # YouTube
 
     # Other
     "com.android.email"                                  # Email
@@ -29,15 +44,14 @@ function RemoveBloat {
     "com.sec.android.daemonapp.ap.yahoonews"             # News Daemon (EUR)
     "com.sec.android.widgetapp.ap.yahoonews"             # Yahoo! News
     "com.sec.android.widgetapp.ap.yahoostock.stockclock" # Yahoo! Finance
-    "flipboard.app"                                      # Flipboard
   )
 
   declare -a AsusApps=(
     # Asus
-    "com.asus.brapp"         # ASUS BR Apps
-    "com.asus.collage"       # ASUS Photo Collage
-    "com.asus.easylauncher"  # ASUS Easy Launcher
-    "com.asus.ephotoburst"   #
+    "com.asus.brapp"        # ASUS BR Apps (Brazil Variant?)
+    "com.asus.collage"      # ASUS Photo Collage
+    "com.asus.easylauncher" # ASUS Easy Launcher
+    "com.asus.ephotoburst"
     "com.asus.gamewidget"    # ASUS Game Genie
     "com.asus.ia.asusapp"    # MyASUS - ASUS Support
     "com.asus.kidslauncher"  # ASUS Kids Launcher
@@ -65,6 +79,25 @@ function RemoveBloat {
     "com.sec.spp.push"                          # Samsung Push Service
   )
 
+  declare -a MotorolaApps=(
+    # Motorola
+    "com.motorola.brapps"           # App Box (Brazil Variant?)
+    "com.motorola.ccc.notification" # Hello Shopping / Hello You
+    "com.motorola.dimo"             # Dimo
+    # "com.motorola.moto"           # Moto
+
+    # Games
+    "ball.sort.puzzle.color.sorting.bubble.games" # Ball Sort Puzzle
+    "com.block.juggle"                            # Block Blast!
+    "com.king.candycrushsaga"                     # Candy Crush Saga
+    "com.moonactive.coinmaster"                   # Coin Master
+    "com.oakever.tiletrip"                        # Tile Explorer
+    "com.soulcompany.bubbleshooter.relaxing"      # Bubble Shooter Relaxing
+    "com.tripledot.solitaire"                     # Solitaire
+    "com.vitastudio.mahjong"                      # Vita Mahjong
+    "games.spearmint.triplecrush"                 # Tiledom
+  )
+
   declare -a XiaomiApps=(
     # Xiaomi (Global)
     "com.android.browser"                    # Mi Browser (1)
@@ -79,7 +112,6 @@ function RemoveBloat {
     "com.facebook.appmanager"          # Facebook App Manager
     "com.facebook.services"            # Facebook Services
     "com.facebook.system"              # Facebook App Installer
-    "com.kwai.video"                   # Kwai
     "com.mi.globalbrowser"             # Mi Browser (2)
     "com.mi.global.bbs"                # Xiaomi Community (New)
     "com.mi.global.shop"               # Mi App Store
@@ -127,6 +159,13 @@ function RemoveBloat {
     "com.sukhavati.gotoplaying.bubble.BubbleShooter.mint" # Bubble Shooter And Friends
   )
 
+  printf "\nDebloating 3rd-Party Apps..."
+  # Iterate the string array using for loop
+  for Bloat in ${ThirdPartyApps[@]}; do
+    printf "Trying to remove: $Bloat "
+    adb shell pm uninstall --user 0 $Bloat
+  done
+
   printf "\nDebloating Common Apps..."
   # Iterate the string array using for loop
   for Bloat in ${CommonApps[@]}; do
@@ -136,6 +175,12 @@ function RemoveBloat {
 
   printf "\nDebloating Asus Apps..."
   for Bloat in ${AsusApps[@]}; do
+    printf "Trying to remove: $Bloat "
+    adb shell pm uninstall --user 0 $Bloat
+  done
+
+  printf "\nDebloating Motorola Apps..."
+  for Bloat in ${MotorolaApps[@]}; do
     printf "Trying to remove: $Bloat "
     adb shell pm uninstall --user 0 $Bloat
   done
