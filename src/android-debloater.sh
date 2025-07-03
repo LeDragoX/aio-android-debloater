@@ -27,9 +27,10 @@ function RemoveBloat {
     "com.google.android.apps.fitness"           # Google Fit
     "com.google.android.apps.magazines"         # Google Play Magazines
     "com.google.android.apps.podcasts"          # Google Podcasts
+    "com.google.android.apps.subscriptions.red" # Google One
     "com.google.android.apps.tachyon"           # Google Duo
     "com.google.android.apps.walletnfcrel"      # Wallet
-    "com.google.android.apps.subscriptions.red" # Google One
+    "com.google.android.apps.youtube.music"     # YouTube Music
     "com.google.android.feedback"               # Market Feedback Agent
     # "com.google.android.googlequicksearchbox" # Google App
     "com.google.android.marvin.talkback" # Google Talkback
