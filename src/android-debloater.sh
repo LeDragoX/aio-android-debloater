@@ -101,7 +101,7 @@ function RemoveBloat {
 
   declare -a XiaomiApps=(
     # Xiaomi (Global)
-    "com.android.browser"                    # Mi Browser (1)
+    "com.android.browser"                    # Mi Browser (Hidden)
     "com.android.midrive"                    # Mi Drive
     "com.android.providers.PartnerBookmarks" # PartnerBookmarks
     "com.android.thememanager"               # Themes
@@ -109,46 +109,47 @@ function RemoveBloat {
     "com.baidu.duersdk.opensdk"              # Duer stuff from Baidu
     "com.baidu.input_mi"                     # Baidu IME (Baidu keyboard)
     "com.baidu.searchbox"                    # Baidu App search engine
-    "com.bsp.catchlog"
-    "com.facebook.appmanager"          # Facebook App Manager
-    "com.facebook.services"            # Facebook Services
-    "com.facebook.system"              # Facebook App Installer
-    "com.mi.globalbrowser"             # Mi Browser (2)
-    "com.mi.global.bbs"                # Xiaomi Community (New)
-    "com.mi.global.shop"               # Mi App Store
-    "com.mi.android.globalminusscreen" # App Vault / Left launcher screen
-    "com.micredit.in.gp"               # Mi Credit
-    "com.mipay.in.wallet"              # Mi Pay (Old)
-    "com.mipay.wallet.in"              # Mi Pay (New)
-    "com.miui.analytics"               # Analytics
-    "com.miui.android.fashiongallery"  # Wallpaper Carrousel
-    "com.miui.calculator"              # Mi Calculator
-    "com.miui.cleaner"                 # Cleaner
-    "com.miui.daemonapp"               # MIUI Daemon (Old)
-    "com.miui.daemon"                  # MIUI Daemon (New)
-    "com.miui.enbbs"                   # MIUI Forum (Old)
-    "com.miui.gallery"                 # Mi Gallery
-    "com.miui.hybrid"                  # QuickApps
-    "com.miui.hybrid.accessory"        # QuickApps Hybrid Accessory
-    "com.miui.miservice"               # Services & Feedback
-    "com.miui.msa.global"              # Xiaomi Ads System
-    "com.miui.player"                  # Mi Music
-    "com.miui.notes"                   # Mi Notes
-    "com.miui.touchassistant"          # QuickBall
-    "com.miui.videoplayer"             # Mi Video
-    "com.miui.yellowpage"              # Yellow Pages
-    "com.netflix.partner.activation"   # PartnerNetflixActivation
-    "com.qiyi.video"                   # IQIYI
-    "com.xiaomi.calendar"              # Mi Calendar
-    "com.xiaomi.glgm"                  # Game Center
-    "com.xiaomi.joyose"                # Joyose
-    "com.xiaomi.midrop"                # Mi Drop
-    "com.xiaomi.mipicks"               # Xiaomi "Play Store"
-    "com.xiaomi.mirecycle"             # Mi Recycle
-    "com.xiaomi.payment"               # Xiaomi Payment
-    "com.xiaomi.scanner"               # Mi Scanner
-    "com.xiaomi.simactivate.service"   # Xiaomi SIM Activation Service
-    "cn.wps.xiaomi.abroad.lite"        # Mi Doc viewer
+    "com.bsp.catchlog"                       # CatchLog
+    "com.facebook.appmanager"                # Facebook App Manager
+    "com.facebook.services"                  # Facebook Services
+    "com.facebook.system"                    # Facebook App Installer
+    "com.mi.android.globalFileexplorer"      # Mi File Manager
+    "com.mi.globalbrowser"                   # Mi Browser (New)
+    "com.mi.global.bbs"                      # Xiaomi Community (New)
+    "com.mi.global.shop"                     # Mi App Store
+    "com.mi.android.globalminusscreen"       # App Vault / Left launcher screen
+    "com.micredit.in.gp"                     # Mi Credit
+    "com.mipay.in.wallet"                    # Mi Pay (Old)
+    "com.mipay.wallet.in"                    # Mi Pay (New)
+    "com.miui.analytics"                     # Analytics
+    "com.miui.android.fashiongallery"        # Wallpaper Carrousel
+    "com.miui.calculator"                    # Mi Calculator
+    "com.miui.cleaner"                       # Cleaner
+    "com.miui.daemonapp"                     # MIUI Daemon (Old)
+    "com.miui.daemon"                        # MIUI Daemon (New)
+    "com.miui.enbbs"                         # MIUI Forum (Old)
+    "com.miui.gallery"                       # Mi Gallery
+    "com.miui.hybrid"                        # QuickApps
+    "com.miui.hybrid.accessory"              # QuickApps Hybrid Accessory
+    "com.miui.miservice"                     # Services & Feedback
+    "com.miui.msa.global"                    # Xiaomi Ads System
+    "com.miui.player"                        # Mi Music
+    "com.miui.notes"                         # Mi Notes
+    "com.miui.touchassistant"                # QuickBall
+    "com.miui.videoplayer"                   # Mi Video
+    "com.miui.yellowpage"                    # Yellow Pages
+    "com.netflix.partner.activation"         # PartnerNetflixActivation
+    "com.qiyi.video"                         # IQIYI
+    "com.xiaomi.calendar"                    # Mi Calendar
+    "com.xiaomi.glgm"                        # Game Center
+    "com.xiaomi.joyose"                      # Joyose
+    "com.xiaomi.midrop"                      # Mi Drop
+    "com.xiaomi.mipicks"                     # GetApps (Xiaomi "Play Store")
+    "com.xiaomi.mirecycle"                   # Mi Recycle
+    "com.xiaomi.payment"                     # Xiaomi Payment
+    "com.xiaomi.scanner"                     # Mi Scanner
+    "com.xiaomi.simactivate.service"         # Xiaomi SIM Activation Service
+    "cn.wps.xiaomi.abroad.lite"              # Mi Doc viewer
 
     # Games
     "com.block.juggle"                                    # Block Blast!

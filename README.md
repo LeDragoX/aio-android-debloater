@@ -15,9 +15,10 @@ This script can be used via terminal to uninstall bloatware Android applications
 
 Using the scripts will require ADB (Android Debug Bridge) installed on your OS and accessible through the terminal.
 
-For **Windows**: <https://developer.android.com/tools/releases/platform-tools>
+For **Windows**:
 
-- Put **ALL** the files inside `src` folder, so the script can use the `adb` command.
+- Install ADB from <https://developer.android.com/tools/releases/platform-tools>;
+- Put **ALL** the files inside `src` folder, so the script can use the `adb` command;
 - Or install ADB **globally** with [Chocolatey](https://chocolatey.org/install#individual):
 
 ```ps1
@@ -58,10 +59,25 @@ chmod --recursive +x **/*.sh  # All .sh files inside folders
 bash ./src/android-debloater.sh
 ```
 
+## Restoring an App
+
+It is possible to recover an app after removing it, even after rebooting. Using `adb` command on any OS.
+
+```sh
+adb shell cmd package install-existing --user 0 com.package.name
+```
+
+**_Replace `com.package.name` with the app package name you want back and you're good to go._**
+
 ## App Alternatives
 
 If an native OEM app was removed, I suggest you some alternatives from Google:
 
+- **Browser**
+  - **[Brave](https://play.google.com/store/apps/details?id=com.brave.browser)**
+  - **[Chrome](https://play.google.com/store/apps/details?id=com.android.chrome)** (_Google_)
+  - **[Edge](https://play.google.com/store/apps/details?id=com.microsoft.emmx)**
+  - **[Firefox](https://play.google.com/store/apps/details?id=org.mozilla.firefox)**
 - **[Calculator](https://play.google.com/store/apps/details?id=com.google.android.calculator)**
 - **[Calendar](https://play.google.com/store/apps/details?id=com.google.android.calendar)**
 - **[Clock](https://play.google.com/store/apps/details?id=com.google.android.deskclock)**
@@ -80,4 +96,4 @@ If an native OEM app was removed, I suggest you some alternatives from Google:
 
 ## Credits
 
-Some of the bloatware found was related to **_[Universal Android Debloater](https://github.com/0x192/universal-android-debloater)_**'s descriptions reporting shady business related to OEM apps, thank you very much UAD Team!
+Some of the bloatware found was related to **_[Universal Android Debloater](https://github.com/0x192/universal-android-debloater)_**'s descriptions reporting shady business related to OEM apps and apps which will bootloop if removed, thank you very much UAD Team!
