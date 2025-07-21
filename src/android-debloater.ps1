@@ -24,7 +24,6 @@ function Remove-Bloat() {
         "com.google.android.apps.podcasts"          # Google Podcasts
         "com.google.android.apps.subscriptions.red" # Google One
         "com.google.android.apps.tachyon"           # Google Duo
-        "com.google.android.apps.walletnfcrel"      # Wallet
         "com.google.android.apps.youtube.music"     # YouTube Music
         "com.google.android.feedback"               # Market Feedback Agent
         # "com.google.android.googlequicksearchbox" # Google App
@@ -82,6 +81,10 @@ function Remove-Bloat() {
         "com.tripledot.solitaire"                     # Solitaire
         "com.vitastudio.mahjong"                      # Vita Mahjong
         "games.spearmint.triplecrush"                 # Tiledom
+    )
+
+    $DisableMotorolaApps = @(
+        "com.aura.oobe.motorola" # MotoApps
     )
 
     $SamsungApps = @(
@@ -178,6 +181,12 @@ function Remove-Bloat() {
     ForEach ($Bloat in $MotorolaApps) {
         Write-Host "Trying to remove: $Bloat " -NoNewline -ForegroundColor Green
         adb shell pm uninstall --user 0 $Bloat
+    }
+
+    Write-Host "`nDisabling Motorola Apps..." -ForegroundColor Green
+    ForEach ($Bloat in $DisableMotorolaApps) {
+        Write-Host "Trying to disable: $Bloat " -NoNewline -ForegroundColor Green
+        adb shell pm disable-user --user 0 $Bloat
     }
 
     Write-Host "`nDebloating Samsung Apps..." -ForegroundColor Green

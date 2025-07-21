@@ -99,6 +99,10 @@ function RemoveBloat {
     "games.spearmint.triplecrush"                 # Tiledom
   )
 
+  declare -a DisableMotorolaApps=(
+    "com.aura.oobe.motorola" # MotoApps
+  )
+
   declare -a XiaomiApps=(
     # Xiaomi (Global)
     "com.android.browser"                    # Mi Browser (Hidden)
@@ -185,6 +189,12 @@ function RemoveBloat {
   for Bloat in ${MotorolaApps[@]}; do
     printf "Trying to remove: $Bloat "
     adb shell pm uninstall --user 0 $Bloat
+  done
+
+  printf "\nDisabling Motorola Apps..."
+  for Bloat in ${DisableMotorolaApps[@]}; do
+    printf "Trying to remove: $Bloat "
+    adb shell pm disable-user --user 0 $Bloat
   done
 
   printf "\nDebloating Samsung Apps..."
