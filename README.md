@@ -85,14 +85,11 @@ If an native OEM app was removed, I suggest you some alternatives from Google:
 - **[Files](https://play.google.com/store/apps/details?id=com.google.android.apps.nbu.files)**
 - **[Gallery](https://play.google.com/store/apps/details?id=com.google.android.apps.photosgo)**
 - **[Messages (SMS)](https://play.google.com/store/apps/details?id=com.google.android.apps.messaging)**
-- **Music**
-  - **_[Auxio](https://github.com/OxygenCobalt/Auxio)_**
-  - **_[Symphony](https://play.google.com/store/apps/details?id=io.github.zyrouge.symphony)_**
-  - **_[Vinyl](https://play.google.com/store/apps/details?id=com.poupa.vinylmusicplayer)_**
-  - or one of **_[this list](https://www.reddit.com/r/fossdroid/comments/gqaxew/a_curated_list_of_open_source_music_players/)_**.
-  - A closed-source one I recommend: **_[Music Player & MP3 Player](https://play.google.com/store/apps/details?id=musicplayer.musicapps.music.mp3player)_** (if you care about subfolders, and doesn't care about Ads)
+- **[Music](https://play.google.com/store/apps/details?id=org.fossify.musicplayer)**
 - **[Phone Dialer](https://play.google.com/store/apps/details?id=com.google.android.dialer)**
 - **_[Video](https://play.google.com/store/apps/details?id=org.videolan.vlc)_**
+
+_For other any suggestion, check on [Fossify](https://play.google.com/store/apps/dev?id=7297838378654322558), a really solid open-source alternative._
 
 ## Credits
 
