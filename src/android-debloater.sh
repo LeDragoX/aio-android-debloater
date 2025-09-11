@@ -6,13 +6,16 @@ function RemoveBloat {
 
   declare -a ThirdPartyApps=(
     # 3rd-Party
-    "com.amazon.mp3"       # Amazon Music
-    "com.booking"          # Booking.com
-    "com.einnovation.temu" # Temu
     # "com.facebook.katana"                    # Facebook
     # "com.linkedin.android"                   # LinkedIn
+    # "com.microsoft.office.outlook"           # Outlook
+    "com.amazon.mp3"                           # Amazon Music
+    "com.booking"                              # Booking.com
+    "com.einnovation.temu"                     # Temu
     "com.inmobi.weather"                       # Weather
     "com.kwai.video"                           # Kwai
+    "com.microsoft.office.officehubrow"        # M365 Copilot
+    "com.microsoft.skydrive"                   # OneDrive
     "com.pdfreader.free.viewer.documentreader" # PDF Reader
     "com.shopee.br"                            # Shopee (Brazil Variant)
     "com.zhiliaoapp.musically"                 # TikTok
@@ -22,6 +25,8 @@ function RemoveBloat {
   declare -a CommonApps=(
     # Google (common)
     # "android.googleSearch.googleSearchWidget" # Google Search
+    # "com.google.android.googlequicksearchbox" # Google App
+    # "com.google.android.youtube"              # YouTube
     "com.google.android.apps.books"             # Google Play Books
     "com.google.android.apps.chromecast.app"    # Google Home
     "com.google.android.apps.fitness"           # Google Fit
@@ -29,14 +34,11 @@ function RemoveBloat {
     "com.google.android.apps.podcasts"          # Google Podcasts
     "com.google.android.apps.subscriptions.red" # Google One
     "com.google.android.apps.tachyon"           # Google Duo
-    "com.google.android.apps.walletnfcrel"      # Wallet
     "com.google.android.apps.youtube.music"     # YouTube Music
     "com.google.android.feedback"               # Market Feedback Agent
-    # "com.google.android.googlequicksearchbox" # Google App
-    "com.google.android.marvin.talkback" # Google Talkback
-    "com.google.android.talk"            # Google Hangouts
-    "com.google.android.videos"          # Google TV
-    # "com.google.android.youtube"              # YouTube
+    "com.google.android.marvin.talkback"        # Google Talkback
+    "com.google.android.talk"                   # Google Hangouts
+    "com.google.android.videos"                 # Google TV
 
     # Other
     "com.android.email"                                  # Email
@@ -70,22 +72,12 @@ function RemoveBloat {
     "com.asus.zentalk"       # Zen Talk
   )
 
-  declare -a SamsungApps=(
-    # Samsung
-    "com.samsung.android.livewallpaper.deepsea" # Deep Sea
-    "com.samsung.helphub"                       # Help
-    "com.samsung.swift.app.kiesair"             # Kies Air
-    "com.sec.android.app.kieswifi"              # Kies via Wi-Fi
-    "com.sec.android.app.samsungapps"           # Samsung Apps
-    "com.sec.spp.push"                          # Samsung Push Service
-  )
-
   declare -a MotorolaApps=(
     # Motorola
+    # "com.motorola.moto"           # Moto
     "com.motorola.brapps"           # App Box (Brazil Variant?)
     "com.motorola.ccc.notification" # Hello Shopping / Hello You
     "com.motorola.dimo"             # Dimo
-    # "com.motorola.moto"           # Moto
 
     # Games
     "ball.sort.puzzle.color.sorting.bubble.games" # Ball Sort Puzzle
@@ -101,6 +93,24 @@ function RemoveBloat {
 
   declare -a DisableMotorolaApps=(
     "com.aura.oobe.motorola" # MotoApps
+  )
+
+  declare -a SamsungApps=(
+    # Samsung
+    "com.samsung.android.app.spage"             # Samsung Free
+    "com.samsung.android.galaxy"                # Galaxy Shop
+    "com.samsung.android.galaxycontinuity"      # Samsung Flow
+    "com.samsung.android.game.gamehome"         # Gaming Hub
+    "com.samsung.android.game.gos"              # Game Optimizing Service
+    "com.samsung.android.livewallpaper.deepsea" # Deep Sea
+    "com.samsung.android.voc"                   # Samsung Members
+    "com.samsung.helphub"                       # Help
+    "com.samsung.swift.app.kiesair"             # Kies Air
+    "com.sec.android.app.kieswifi"              # Kies via Wi-Fi
+    "com.sec.android.app.samsungapps"           # Samsung Apps
+    "com.sec.android.easyMover"                 # Smart Switch
+    "com.sec.android.easyMover.Agent"           # Smart Switch Agent
+    "com.sec.spp.push"                          # Samsung Push Service
   )
 
   declare -a XiaomiApps=(
