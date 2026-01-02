@@ -80,14 +80,15 @@ If an native OEM app was removed, I suggest you some alternatives from Google:
   - **[Firefox](https://play.google.com/store/apps/details?id=org.mozilla.firefox)**
 - **[Calculator](https://play.google.com/store/apps/details?id=com.google.android.calculator)**
 - **[Calendar](https://play.google.com/store/apps/details?id=com.google.android.calendar)**
+- **[Documents](https://play.google.com/store/apps/details?id=com.google.android.apps.docs.editors.docs)**, **[Sheets](https://play.google.com/store/apps/details?id=com.google.android.apps.docs.editors.sheets)** & **[Slides](https://play.google.com/store/apps/details?id=com.google.android.apps.docs.editors.slides)**
 - **[Clock](https://play.google.com/store/apps/details?id=com.google.android.deskclock)**
 - **[Contacts](https://play.google.com/store/apps/details?id=com.google.android.contacts)**
 - **[Files](https://play.google.com/store/apps/details?id=com.google.android.apps.nbu.files)**
 - **[Gallery](https://play.google.com/store/apps/details?id=com.google.android.apps.photosgo)**
 - **[Messages (SMS)](https://play.google.com/store/apps/details?id=com.google.android.apps.messaging)**
-- **[Music](https://play.google.com/store/apps/details?id=org.fossify.musicplayer)**
+- **[Music](https://play.google.com/store/apps/details?id=org.fossify.musicplayer)** | **[Alternative](https://play.google.com/store/apps/details?id=com.rhmsoft.pulsar)**
 - **[Phone Dialer](https://play.google.com/store/apps/details?id=com.google.android.dialer)**
-- **_[Video](https://play.google.com/store/apps/details?id=org.videolan.vlc)_**
+- **[Video](https://play.google.com/store/apps/details?id=org.videolan.vlc)**
 
 _For other any suggestion, check on [Fossify](https://play.google.com/store/apps/dev?id=7297838378654322558), a really solid open-source alternative._
 

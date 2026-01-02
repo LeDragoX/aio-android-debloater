@@ -123,17 +123,20 @@ function Remove-Bloat() {
         "com.facebook.services"                  # Facebook Services
         "com.facebook.system"                    # Facebook App Installer
         "com.mi.android.globalFileexplorer"      # Mi File Manager
+        "com.mi.android.globalminusscreen"       # App Vault (Old)
         "com.mi.globalbrowser"                   # Mi Browser (New)
+        "com.mi.globalminusscreen"               # App Vault (New)
         "com.mi.global.bbs"                      # Xiaomi Community (New)
         "com.mi.global.shop"                     # Mi App Store
-        "com.mi.android.globalminusscreen"       # App Vault / Left launcher screen
-        "com.micredit.in.gp"                     # Mi Credit
+        "com.micredit.in.gp"                     # Mi Credit (Old)
+        "com.micredit.in"                        # Mi Credit (New)
         "com.mipay.in.wallet"                    # Mi Pay (Old)
         "com.mipay.wallet.in"                    # Mi Pay (New)
         "com.miui.analytics"                     # Analytics
         "com.miui.android.fashiongallery"        # Wallpaper Carrousel
         "com.miui.calculator"                    # Mi Calculator
-        "com.miui.cleaner"                       # Cleaner
+        "com.miui.cleaner"                       # Cleaner (New)
+        "com.miui.cleanmaster"                   # Clean Master (Old/Cheetah Mobile)
         "com.miui.daemonapp"                     # MIUI Daemon (Old)
         "com.miui.daemon"                        # MIUI Daemon (New)
         "com.miui.enbbs"                         # MIUI Forum (Old)
@@ -158,6 +161,7 @@ function Remove-Bloat() {
         "com.xiaomi.payment"                     # Xiaomi Payment
         "com.xiaomi.scanner"                     # Mi Scanner
         "com.xiaomi.simactivate.service"         # Xiaomi SIM Activation Service
+        "com.xiaomi.xmsfkeeper"                  # Xiaomi Service Framework Keeper
         "cn.wps.xiaomi.abroad.lite"              # Mi Doc viewer
 
         # Games
