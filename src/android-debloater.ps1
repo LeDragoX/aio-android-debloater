@@ -92,20 +92,31 @@ function Remove-Bloat() {
 
     $SamsungApps = @(
         # Samsung
+        "com.hiya.star"                             # Hiya Service
+        "com.samsung.android.app.omcagent"          # Recommended Apps
         "com.samsung.android.app.spage"             # Samsung Free
         "com.samsung.android.galaxy"                # Galaxy Shop
         "com.samsung.android.galaxycontinuity"      # Samsung Flow
         "com.samsung.android.game.gamehome"         # Gaming Hub
-        "com.samsung.android.game.gos"              # Game Optimizing Service
+        "com.samsung.android.kidsinstaller"         # Samsung Kids Installer
         "com.samsung.android.livewallpaper.deepsea" # Deep Sea
+        "com.samsung.android.mapsagent"             # ??? - Similar to omcagent
+        "com.samsung.android.smartcallprovider"     # Smart Call
         "com.samsung.android.voc"                   # Samsung Members
         "com.samsung.helphub"                       # Help
         "com.samsung.swift.app.kiesair"             # Kies Air
+        "com.sec.android.app.chromecustomizations"  # ChromeCustomizations
+        "com.sec.android.app.kidshome"              # Samsung Kids
         "com.sec.android.app.kieswifi"              # Kies via Wi-Fi
         "com.sec.android.app.samsungapps"           # Samsung Apps
+        "com.sec.android.app.sbrowser"              # Samsung Internet
         "com.sec.android.easyMover"                 # Smart Switch
         "com.sec.android.easyMover.Agent"           # Smart Switch Agent
         "com.sec.spp.push"                          # Samsung Push Service
+    )
+
+    $DisableSamsungApps = @(
+        "com.samsung.android.game.gos"              # Game Optimizing Service
     )
 
     $XiaomiApps = @(
@@ -208,6 +219,12 @@ function Remove-Bloat() {
     ForEach ($Bloat in $SamsungApps) {
         Write-Host "Trying to remove: $Bloat " -NoNewline -ForegroundColor Green
         adb shell pm uninstall --user 0 $Bloat
+    }
+
+    Write-Host "`nDisabling Samsung Apps..." -ForegroundColor Green
+    ForEach ($Bloat in $DisableSamsungApps) {
+        Write-Host "Trying to disable: $Bloat " -NoNewline -ForegroundColor Green
+        adb shell pm disable-user --user 0 $Bloat
     }
 
     Write-Host "`nDebloating Xiaomi Apps..." -ForegroundColor Green
