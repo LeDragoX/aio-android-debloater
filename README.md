@@ -94,4 +94,4 @@ _For other any suggestion, check on [Fossify](https://play.google.com/store/apps
 
 ## Credits
 
-Some of the bloatware found was related to **_[Universal Android Debloater](https://github.com/0x192/universal-android-debloater)_**'s descriptions reporting shady business related to OEM apps and apps which will bootloop if removed, thank you very much UAD Team!
+Some of the bloatware found was related to **_[Universal Android Debloater](https://github.com/0x192/universal-android-debloater)/[UAD-NG](https://github.com/Universal-Debloater-Alliance/universal-android-debloater-next-generation)_**'s descriptions reporting shady business related to OEM apps and apps which will bootloop if removed, thank you very much UAD Team!

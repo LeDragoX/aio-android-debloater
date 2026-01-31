@@ -74,10 +74,16 @@ function RemoveBloat {
 
   declare -a MotorolaApps=(
     # Motorola
+    # "com.motorola.gamemode"       # Games
+    # "com.motorola.help"           # Moto Feedback
+    # "com.motorola.help.extlog"    # Moto Feedback Assistant
     # "com.motorola.moto"           # Moto
+    "com.aura.oobe.motorola"        # MotoApps
     "com.motorola.brapps"           # App Box (Brazil Variant?)
     "com.motorola.ccc.notification" # Hello Shopping / Hello You
     "com.motorola.dimo"             # Dimo
+    "com.motorola.livewallpaper3"   # Interactive wallpapers
+    "com.motorola.spaces"           # Family Space
 
     # Games
     "ball.sort.puzzle.color.sorting.bubble.games" # Ball Sort Puzzle
@@ -89,10 +95,6 @@ function RemoveBloat {
     "com.tripledot.solitaire"                     # Solitaire
     "com.vitastudio.mahjong"                      # Vita Mahjong
     "games.spearmint.triplecrush"                 # Tiledom
-  )
-
-  declare -a DisableMotorolaApps=(
-    "com.aura.oobe.motorola" # MotoApps
   )
 
   declare -a SamsungApps=(
@@ -214,12 +216,6 @@ function RemoveBloat {
   for Bloat in ${MotorolaApps[@]}; do
     printf "Trying to remove: $Bloat "
     adb shell pm uninstall --user 0 $Bloat
-  done
-
-  printf "\nDisabling Motorola Apps..."
-  for Bloat in ${DisableMotorolaApps[@]}; do
-    printf "Trying to remove: $Bloat "
-    adb shell pm disable-user --user 0 $Bloat
   done
 
   printf "\nDebloating Samsung Apps..."
