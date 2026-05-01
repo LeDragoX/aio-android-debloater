@@ -94,6 +94,8 @@ function Remove-Bloat() {
 
     $SamsungApps = @(
         # Samsung
+        # "com.sec.android.easyMover"               # Smart Switch
+        # "com.sec.android.easyMover.Agent"         # Smart Switch Agent
         "com.hiya.star"                             # Hiya Service
         "com.samsung.android.app.omcagent"          # Recommended Apps
         "com.samsung.android.app.spage"             # Samsung Free
@@ -106,14 +108,15 @@ function Remove-Bloat() {
         "com.samsung.android.smartcallprovider"     # Smart Call
         "com.samsung.android.voc"                   # Samsung Members
         "com.samsung.helphub"                       # Help
+        "com.samsung.shop"                          # Samsung Shop
+        "com.samsung.sree"                          # Samsung Global Goals
         "com.samsung.swift.app.kiesair"             # Kies Air
         "com.sec.android.app.chromecustomizations"  # ChromeCustomizations
         "com.sec.android.app.kidshome"              # Samsung Kids
         "com.sec.android.app.kieswifi"              # Kies via Wi-Fi
         "com.sec.android.app.samsungapps"           # Samsung Apps
         "com.sec.android.app.sbrowser"              # Samsung Internet
-        "com.sec.android.easyMover"                 # Smart Switch
-        "com.sec.android.easyMover.Agent"           # Smart Switch Agent
+        "com.sec.android.app.shealth"               # Samsung Health
         "com.sec.spp.push"                          # Samsung Push Service
     )
 
